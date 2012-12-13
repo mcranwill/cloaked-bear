@@ -15,3 +15,6 @@ Development Environment
 	
 	for production, ProcFile must be changed to 
 	web: python manage.py runserver 0.0.0.0:$PORT --noreload
+	
+	for testing locally, db connection must be 'fixed' by hard coding last line
+	in settings.py file.  This is because of a deficiency in foreman.

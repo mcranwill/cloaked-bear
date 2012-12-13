@@ -1,4 +1,4 @@
-# Django settings for testdjango project.
+# Django settings for devApp project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -78,7 +78,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '-*zi*9pt$oyn!_s5yot!qm2v+sx@3mar!=61-v=+!age5s!%%l'
+SECRET_KEY = '43i2$h2pt-=d-8x6%)9n=&amp;rt-ghj7*cojj7@4$*2fdfh#j-)55'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -97,10 +97,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'testdjango.urls'
+ROOT_URLCONF = 'devApp.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'testdjango.wsgi.application'
+WSGI_APPLICATION = 'devApp.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -150,9 +150,6 @@ LOGGING = {
     }
 }
 
-# Parse database configuration from $DATABASE_URL
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
-#default='postgres://localhost/dev'
-#import dj_database_url
-#DATABASES = {'default': dj_database_url.config()}
+#DATABASES['default'] = dj_database_url.config()
+DATABASES = {'default': dj_database_url.config(default='postgres://localhost/dev')}
