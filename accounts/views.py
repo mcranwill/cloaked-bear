@@ -5,6 +5,7 @@ from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login as auth_login, logout
 from forms import LoginForm
+from django.contrib.auth.views import logout_then_login
 
 def login(request):
     msg=[]
@@ -30,11 +31,18 @@ def login(request):
         'form': form, 'msg': msg,
     },context_instance= RequestContext(request))
 
+#def register(request):
+ #   if reqest.method == 'POST':
+  #      form = UserCreationForm(request.POST)
+   #     if form.is_valid():
+#	    
+ #   form = UserCreationForm()
+
 @login_required(login_url='/accounts/login.html')
 def thanks(request):
     return render_to_response('accounts/thanks.html') # Redirect after POST
 
 @login_required(login_url='/accounts/login.html')
-def logout_view(request):
-    logout(request)
-    return redirect('login.html')
+def logout_user(request):
+    return logout_then_login(request,'/accounts/login.html')
+
