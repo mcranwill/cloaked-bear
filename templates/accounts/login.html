@@ -1,0 +1,9 @@
+<form action="login.html" method="post">{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Submit" />
+{% if msg|length > 0 %}
+{%for each in msg%}
+<p>{{each}}</p>
+{%endfor%}
+{%endif%}
+</form>
