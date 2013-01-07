@@ -8,4 +8,4 @@ from django.contrib.auth.views import logout_then_login
 
 @login_required(login_url='/accounts/login.html')
 def disp_all_friends(request):
-    return render_to_response('friendID/allFriends.html') # Redirect after POST
+    return render_to_response('friendID/allFriends.html',context_instance = RequestContext(request)) # Redirect after POST
