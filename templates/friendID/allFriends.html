@@ -1,9 +1,20 @@
 {%extends "base.html"%}
+
 {% block gameWindow %}
-<p>Here is where the window will go</p>
+<p>Here is where the window is</p>
+<p>{{response}}</p>
+<form id="gameForm" method="post"  >{% csrf_token%}
+<img id="profilePic" src=""></img>
+<select id="picOptions"></select>
+<p id="theChosenOne" style="display:none;"></p>
+<input type="submit" value="Submit"/>
+<button  onClick="submitHelp()"> Send</button>
+</form>
 {% endblock %}
 
 {%block content%}
 <button onClick="getFriends()">Update Friends List</button>
 <button onClick="dispFriends()">Display Friends List</button>
+<button onClick="myGame()">Start Game</button>
 {%endblock%}
+

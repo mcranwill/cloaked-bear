@@ -80,6 +80,8 @@ STATICFILES_FINDERS = (
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '43i2$h2pt-=d-8x6%)9n=&amp;rt-ghj7*cojj7@4$*2fdfh#j-)55'
 
+AUTH_USER_MODULE = 'accounts.CustomUser'
+
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
